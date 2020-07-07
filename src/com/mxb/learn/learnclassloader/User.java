@@ -33,4 +33,8 @@ public class User {
     public void setAge(String age) {
         this.age = age;
     }
+
+    public void sout(){
+        System.out.println("=========自己的类加载器加载类调动方法===============");
+    }
 }

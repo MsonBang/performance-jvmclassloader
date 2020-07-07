@@ -43,7 +43,7 @@ public class MyClassLoaderTest {
     public static void main(String[] args) throws Exception {
         //初始化类加载器，会先初始化父类ClassLoader，其中会把自定义类加载器的父加载器设置为应用程序类加载器AppClassLoader
         MyClassLoader classLoader = new MyClassLoader("/Users/msonbang/Documents/MsonbangLearnCodes");
-        //在这个路径中丢一个class文件
+        //在这个路径中丢一个class文件，如果需要打破双气委派模式，就要重写loadClass方法
         Class clazz = classLoader.loadClass("com1.mxb1.learn1.User");
         Object obj = clazz.newInstance();
         Method method = clazz.getDeclaredMethod("sout", null);
